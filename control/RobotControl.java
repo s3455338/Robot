@@ -72,6 +72,7 @@ public class RobotControl implements Control
 
 		// a simple private method to demonstrate how to control (assignment PART B)
 		moveToHeight(MAX_HEIGHT);
+		
 		moveToWidth (MAX_WIDTH);
 		moveToDepth (MAX_DEPTH);
 		
@@ -111,23 +112,40 @@ public class RobotControl implements Control
 			robot.up();
 			this.height++;
 		}
-	}
+      while (this.height < height)
+      {
+         robot.down();
+         this.height++;
+      }
+   }
 	  private void moveToWidth(int width)
 	   {
 	      while (this.width < width)
 	      {
-	         robot.up();
+	         robot.contract();
 	         this.width++;
 	      }
+	      while (this.width < width)
+         {
+            robot.extend();
+            this.width++;
+         }
 	   }
 	  
      private void moveToDepth(int depth)
      {
         while (this.depth < depth)
         {
-           robot.up();
+           robot.lower();
+           this.depth++;
+        }
+        while (this.depth < depth)
+        {
+           robot.raise();
            this.depth++;
         }
      }
+     
+     
 	// assignment part B methods implemented here
 }
