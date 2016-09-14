@@ -10,9 +10,9 @@ public class RobotControl implements Control
 
 	private static final int MAX_HEIGHT = 13;
 
-   private static final int MAX_WIDTH = 0;
+   private static final int MAX_WIDTH = 1;
 
-   private static final int MAX_DEPTH = 0;
+   private static final int MAX_DEPTH = 12;
 
 	private int height = 2;
 	private int width = 1;
@@ -101,18 +101,20 @@ public class RobotControl implements Control
 	         System.out.println("Enter Height of blocks(min 1/max 3:");
 	       blocks = input.nextInt();
 	       blockHeights[i] = blocks;
-	         } while (blocks >= 3);
+	         } while (blocks > 3);
       return blockHeights;
    }
 
 	private void moveToHeight(int height)
 	{
+	   
 		while (this.height < height)
 		{
 			robot.up();
 			this.height++;
+			
 		}
-      while (this.height < height)
+      while (this.height > height)
       {
          robot.down();
          this.height++;
