@@ -10,9 +10,9 @@ public class RobotControl implements Control
 
 	private static final int MAX_HEIGHT = 13;
 
-   private static final int MAX_WIDTH = 1;
+        private static final int MAX_WIDTH = 1;
 
-   private static final int MAX_DEPTH = 12;
+        private static final int MAX_DEPTH = 12;
 
 	private int height = 2;
 	private int width = 1;
@@ -72,7 +72,6 @@ public class RobotControl implements Control
 
 		// a simple private method to demonstrate how to control (assignment PART B)
 		moveToHeight(MAX_HEIGHT);
-		
 		moveToWidth (MAX_WIDTH);
 		moveToDepth (MAX_DEPTH);
 		
@@ -105,6 +104,7 @@ public class RobotControl implements Control
       return blockHeights;
    }
 
+//Assignment Part B methods to be created below
 	private void moveToHeight(int height)
 	{
 	   
